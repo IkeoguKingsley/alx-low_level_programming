@@ -6,15 +6,17 @@
  * @src: copy from
  * Return: string
  */
-char *_strcpy(char *dest, char *src)
+char *_strcpy(char *dest, const char *src);
 {
-	int i = 0;
+	size_t dest_len = strlen(dest);
+	size_t i;
 
-	for (; src[i] != '\0'; i++)
+	for (i = 0 ; i < n && src[i] != '\0' ; i++)
 	{
-		dest[i] = src[i];
+		dest[dest_len + i] = src[i];
 	}
 
-	dest[dest + i] = '\0';
+	dest[dest_len + i] = '\0';
+
 	return (dest);
 }
